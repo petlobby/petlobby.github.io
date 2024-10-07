@@ -173,6 +173,16 @@ h6,
     }
 }
 
+@media (max-width: 991.98px) {
+    .navbar-service .navbar-brand h1{
+        color: white;
+    }
+
+    .navbar-service .navbar-toggler span {
+        color: white;
+    }
+}
+
 @media (min-width: 992px) {
     .navbar-dark {
         position: absolute;
@@ -181,6 +191,9 @@ h6,
         left: 0;
         border-bottom: 1px solid rgba(256, 256, 256, .1);
         z-index: 999;
+    }
+    .navbar-service {
+        background-color: royalblue;
     }
     
     .sticky-top.navbar-dark {
@@ -475,6 +488,111 @@ h6,
 .bg-header {
     background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
+}
+
+.bg-service {
+    background-color: royalblue;
+}
+
+.vh-75 {
+    height: 75vh;
+}
+
+.vh-50 {
+    height: 50vh;
+}
+
+.vh-25 {
+    height: 25vh;
+}
+
+.vh-65 {
+    height: 65vh;
+}
+
+.service-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.bg-light-service {
+    background-color: #9acbeb;
+}
+
+.service-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+}
+
+.consultancy-card {
+    background-color: #cbeff6;
+    width: 70%;
+}
+
+.stray-upload-container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.stray-upload-container form label {
+    font-size: 1.3em;
+    color: black;
+}
+
+.stray-upload-container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-upload {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#canv1 {
+    width: 40%;
+    height: 70%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.card-span-text {
+    font-family: sans-serif;
+}
+
+.card-footer-text {
+    font-size: 1.2rem;
+}
+
+.dr-img {
+    max-height: 40vh;
+}
+
+.consultancy-card:first-child {
+    margin-top: 5%;
+}
+
+.consultancy-card:last-child {
+    margin-bottom: 5%;
+}
+
+.service-footer {
+    margin-top: 5%;
 }
 
 .link-animated a {
