@@ -73,11 +73,40 @@
     <div class="container-fluid p-0 bg-light-service service-container">
         <div class="stray-upload-container container-fluid">
             <h2>Upload image of the stray</h2>
-            <canvas id= "canv1"></canvas>
-            <form>
+            <div class="ngos-canvas-ngos">
+                <div>
+                    <div><h4>Human for animals - 95822 35700</h4></div>
+                    <div><h4>SAFAR - 84487 56536</h4></div>
+                    <div><h4>Abbo Foundation - 96670 26309</h4></div>
+                    <div><h4>Dog Adoption Indore - 90988 89713</h4></div>
+                    <div><h4>Hope for better tomorrow - 8882016335</h4></div>
+                    <div><h4>Chardikala animal shelter - 9818048398</h4></div>
+                </div>
+                <canvas id= "canv1"></canvas>
+                <div>
+                    <div><h4>Feeders and caregivers - 99586 13736</h4></div>
+                    <div><h4>Stray farm - 78071 01723</h4></div>
+                    <div><h4>HHA Indore -  98736 03463</h4></div>
+                    <div><h4>HFBT - 98932 23056</h4></div>
+                    <div><h4>Dog Care Indore - +13306214361</h4></div>
+                    <div><h4>our Jan bezuban - 98730 46185</h4></div>
+                </div>
+            </div>
+            <form id="stray-form">
                 <div class="img-upload">
                     <label for="finput" style="padding-left: 120px;">Select File: </label>
-                    <input type="file" multiple="false" accept="image/*" id="finput" onchange="upload()" style="padding-left: 2%;">
+                    <input required type="file" multiple="false" accept="image/*" id="finput" onchange="upload()" style="padding-left: 2%;">
+                </div>
+                <div class="form-container">
+                    <div>
+                        <label for="location">Location spotted:</label>
+                        <input required type="text" name="location" id="location">
+                    </div>
+                    <div>
+                        <label for="pincode">Pincode:</label>
+                        <input required type="text" name="pincode" id="pincode">
+                    </div>
+                    <input type="submit" value="Notify NGOs" id="notifyNGOs">
                 </div>
             </form>
         </div>
@@ -87,7 +116,7 @@
     <!-- NGO Ends -->
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid bg-dark text-light wow" data-wow-delay="0.1s">
         <div class="container">
             <div class="row gx-5">
                 <div class="col-lg-4 col-md-6 footer-about">

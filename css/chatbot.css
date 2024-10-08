@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%; /* Ensure the body takes full width */
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0f7fa; /* Light blue background */
+}
+
+.chat-container {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background-color: #1976d2; /* Darker blue for the header */
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.chat-window {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+  background-color: #becec8; /* Light gray for the chat window */
+}
+
+.chat-input-area {
+  display: flex;
+  padding: 10px;
+  background-color: #bbdefb; /* Light blue for the input area */
+  border-top: 1px solid #90caf9; /* Lighter blue border */
+}
+
+.chat-input-area input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #90caf9; /* Lighter blue for input border */
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.chat-input-area button {
+  background-color: #1976d2; /* Darker blue for the button */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-input-area button:hover {
+  background-color: #115293; /* Darker blue on hover */
+}
+
+.message-container:has(.bot-message) {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat-message {
+    display: inline-block; /* Ensure each message is displayed as a block element */
+    margin: 10px 0; /* Add some space between messages */
+    padding: 8px; /* Optional: Add some padding */
+    border-radius: 5px; /* Optional: Round the corners */
+}
+
+.user-message {
+    background-color: #e1ffc7; /* Example color for user messages */
+    text-align: right; /* Align text to the left */
+}
+
+.bot-message {
+    background-color: #f1f0f0; /* Example color for bot messages */
+    text-align: left; /* Align text to the left */
+}
+

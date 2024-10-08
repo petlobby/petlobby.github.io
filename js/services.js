@@ -1,3 +1,4 @@
+// Upload image
 document.getElementById('finput').addEventListener('change', function(event) {
     const file = event.target.files[0];
     if (file) {
@@ -29,4 +30,10 @@ document.getElementById('finput').addEventListener('change', function(event) {
         };
         reader.readAsDataURL(file);
     }
+});
+
+// stray form submission
+const form = document.getElementById('stray-form');
+form.addEventListener('submit', function() {
+    alert('Thank you for reporting. A nearby NGO will be notified. We will let you know when the dog is rescued.');
 });
