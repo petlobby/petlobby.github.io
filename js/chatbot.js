@@ -9,8 +9,6 @@ document.getElementById('user-input').addEventListener('keypress', function (e) 
 });
 
 function sendMessage() {
-  console.log("button clicked");
-  
   const userInput = document.getElementById('user-input');
   const message = userInput.value.trim(); // Trim whitespace
 

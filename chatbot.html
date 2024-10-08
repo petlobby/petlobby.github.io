@@ -52,7 +52,78 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/chatbot.js"></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <script type="module">
+      import { GoogleGenerativeAI } from "@google/generative-ai";
+
+      const customInstruction = "You are Pet Lobby AI, which will help with a direct, short-medium length and accuracte response whenever someone asks a question related to their pet.";
+
+
+      const button = document.getElementById('send-button').addEventListener('click', sendMessage);
+
+      document.getElementById('user-input').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          sendMessage();
+        }
+      });
+
+      async function sendMessage() {
+        const userInput = document.getElementById('user-input');
+        const message = userInput.value.trim(); // Trim whitespace
+
+        if (message) {
+          addMessageToChat('user-message', message);
+          userInput.value = ''; // Clear input after sending
+    
+          // Simulate a bot response after 1 second
+          const botResponse = await generateResponse().catch(err => {
+            console.log("Error fetching response");
+            console.log(err);
+          });
+          if (botResponse) {
+            addMessageToChat('bot-message', botResponse);
+          }
+        }
+      }
+
+      function addMessageToChat(type, message) {
+        const chatWindow = document.getElementById('chat-window');
+        const messageContainer = document.createElement('div');
+        const messageElement = document.createElement('span')
+
+        messageContainer.classList.add('message-container');
+        messageElement.classList.add('chat-message', type);
+        messageElement.innerText = message;
+
+        chatWindow.appendChild(messageContainer);
+        messageContainer.appendChild(messageElement)
+        chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to the bottom of chat
+      }
+
+      // Fetch your API_KEY
+      const API_KEY = "AIzaSyA1Vc7dwZxeahZyacd-WDZNAI2td3rUs4k";
+      const genAI = new GoogleGenerativeAI(API_KEY);
+      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+      function getPrompt() {
+        const inputs = document.getElementsByClassName('user-message');
+        const lastInput = inputs[inputs.length - 1];
+        const prompt = `${customInstruction}\n\nUser's Request: ${lastInput.innerHTML}`;
+        return prompt;
+      }
+
+      async function generateResponse() {
+        const result = await model.generateContent(getPrompt());
+        return result.response.text()
+      }
+    </script>
 
 </body>
 </html>
