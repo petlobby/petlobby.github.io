@@ -62,7 +62,7 @@
 
         <!-- Navbar ends -->
 
-        <!-- Consultancy starts -->
+        <!-- title starts -->
 
         <div class="container-fluid service-title-container vh-65 fadeInUp">
             <h1 class="text-white display-3">Diet Plan</h1>
@@ -70,9 +70,77 @@
         </div>
     </div>
 
-    <div class="container-fluid p-0 bg-light-service service-container">
-        <div></div>
-        <div></div>
+    <div class="container-fluid p-0 bg-light-service diet-container">
+        <div class="input-container-outer">
+            <h2 class="text-center p-5">Enter your pet's details</h2>
+            <div class="diet-input-container">
+                <div class="select-container">
+                    <label for="breed">Breed: </label>
+                    <select name="breed" id="breed">
+                        <option value="labrador">Labrador</option>
+                        <option value="german-shephard">German Shepherd</option>
+                        <option value="labrador">Pug</option>
+                        <option value="labrador">Rottweiler</option>
+                    </select>
+                </div>
+
+                <div class="select-container">
+                    <label for="age-group">Age Group: </label>
+                    <select name="age-group" id="age-group">
+                        <option value="infant">Infant</option>
+                        <option value="young">Young</option>
+                        <option value="old">Old</option>
+                    </select>
+                </div>
+
+                <div class="select-container">
+                    <label for="excretion">Daily Excretion: </label>
+                    <select name="excretion" id="excretion">
+                        <option value="0">0 times</option>
+                        <option value="1">1 time</option>
+                        <option value="2">2 times</option>
+                        <option value="3">3 times</option>
+                        <option value="4+">4+ times</option>
+                    </select>
+                </div>
+
+
+                <div class="select-container">
+                    <label for="walk">Daily Walk: </label>
+                    <select name="walk" id="walk">
+                        <option value="1">walks one time</option>
+                        <option value="2">walks 2 times</option>
+                        <option value="3">walks 3 times</option>
+                    </select>
+                </div>
+                
+
+                <div class="select-container">
+                    <label for="feed">Daily Feed: </label>
+                    <select name="feed" id="feed">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3+">3+</option>
+                    </select>
+                </div>
+
+
+                <div class="select-container">
+                    <label for="weight">Weight: </label>
+                    <select name="weight" id="weight">
+                        <option value="10">0 - 10kgs</option>
+                        <option value="20">10 - 20kgs</option>
+                        <option value="40">20 - 40kgs</option>
+                        <option value="55">40 - 55kgs</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <div class="diet-chart-container">
+            <img src="img/charts/labrador-infant.jpg" id="chart-image" class="hidden-img">
+            <button onclick="generateDiet()" id="generate-diet">Generate Diet</button>
+        </div>
     </div>
 
             
@@ -177,5 +245,6 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/services.js"></script>
 </body>
 </html>

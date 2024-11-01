@@ -37,3 +37,10 @@ const form = document.getElementById('stray-form');
 form.addEventListener('submit', function() {
     alert('Thank you for reporting. A nearby NGO will be notified. We will let you know when the dog is rescued.');
 });
+
+// diet chart
+function generateDiet() {
+    image = document.getElementById('chart-image');
+    image.classList.remove('hidden-image');
+    // image.src = `${}`
+}
